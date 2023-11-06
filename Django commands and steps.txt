@@ -20,6 +20,9 @@ Useful Commands=================================================================
 
 Notes for next steps==========================================================================
  1. Test app. Get it running.
+*Update the cards to refer to images. Make the images about Community for now, but give the users 
+     their own spaces eventually.
+
  2. Update views and urls and templates to put the cards inside the same page as the carddeck page.
  3. Have carddecks appear as <a href> list links on the homepage (index). 
  4. Have the carddecks appear as list items (a hrefs) on the user page.
