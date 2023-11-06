@@ -33,3 +33,4 @@ Notes for next steps============================================================
 More sources:
 - Migrations https://realpython.com/django-migrations-a-primer/
 - Remote branch commands: https://shravan.dev/blog/update-the-local-list-of-remote-branches-in-the-git-repository/
+- Fixing blank images issue: https://stackoverflow.com/questions/20848640/django-not-displaying-image
