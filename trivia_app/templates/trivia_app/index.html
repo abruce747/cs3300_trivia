@@ -4,10 +4,10 @@
     {% block content %}
         <h1>All Active Card Decks</h1>
         <ul class="list-group">
-            {% for i in user_active_carddecks %}
+            {% for i in CardDeck %}
                 <li class="list-group-item">Title: {{i.title}}
                     <p><strong>Description: {{ i.carddeck.description }}</p>
-                    <p><strong>AUthor: {{ i.carddeck.author }}</p>
+                    <p><strong>Author: {{ i.carddeck.author }}</p>
                     <a class="btn btn-primary" href="{{ i.carddeck.get_absolute_url }}" role="button">Play</a>
                     </strong>
                 </li>
