@@ -1,0 +1,9 @@
+{% extends 'trivia_app/base_template.html' %}
+
+{% block content %}
+    <h1>Card Title: {{ card.title }}</h1>
+
+    <p><strong>Description: </strong> {{ card.question }}</p>
+    <!--<p><strong>Belongs to portfolio: </strong> {{ project.portfolio.title }}</p>-->
+
+{% endblock %}

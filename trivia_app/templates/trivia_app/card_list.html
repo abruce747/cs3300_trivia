@@ -1,0 +1,16 @@
+{% extends 'trivia_app/base_template.html' %}
+
+{% block content %}
+    <h1>Card List</h1>
+    {% if card_list %}
+    <ul>
+        {% for card in card_list %}
+        <li>
+            <a href="{{ card.get_absolute_url }}">{{card.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>There are no cards created.</p>
+    {% endif %}
+{% endblock %}
