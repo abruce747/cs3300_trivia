@@ -26,7 +26,12 @@ class User(models.Model):
         #Optional "about"   field, from https://stackoverflow.com/questions/16349545/optional-fields-in-django-models
     about = models.CharField(max_length=1000, blank=True, default='')
     contact_email = models.CharField(max_length=200) 
+    
+    #Need to replace:
     CardDeck = models.OneToOneField(CardDeck, on_delete=models.CASCADE, unique=True, default=None)
+    #with:
+    #CardDeck = models.ManyToManyField(CardDeck, on_delete=models.CASCADE, unique=True, default=None)
+  
         #CardDeck = models.ForeignKey(CardDeck, on_delete=models.CASCADE, unique=True, default=None)
 
     #Define default String to return the name for representing the Model object."
