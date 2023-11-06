@@ -1,0 +1,32 @@
+Useful Commands===============================================================================
+- Activate virtual environment:              source /c/Users/andyb/cs3300_trivia/trivia_djvenv/scripts/activate
+- Run server (http://127.0.0.1:8000):        python manage.py runserver or python3 
+- Access web app:                            Open http://127.0.0.1:8000  
+- Quit server                                CTRL+C
+- Saving to GitHub:                          git add -A, git commit -m "message", git push, git status
+- Indenting in VS Code:                      highlight sections and press Tab
+- Opening admin page:                        open http://127.0.0.1:8000/admin and enter login: andyb, B1n password
+- Opening python command prompt:             python
+- Migrating databases (after modfiying):     python3 manage.py makemigrations trivia_app
+                                             python3 manage.py migrate
+    *Note for migrations: change code in models.py, then import and register in admin.py.
+     Then, run the makemigrations and migrate commands.
+- Checking branches:                         git branch -a   
+- Updating local branches to match remote:   Be careful here: git remote update origin
+- Downloading django-bootstrap:              Open the trivia_djvenv folder, activate the venv, and run:
+                                             python3 -m pip install django-bootstrap-v5
+
+
+
+Notes for next steps==========================================================================
+ 1. Test app. Get it running.
+ 2. Update views and urls and templates to put the cards inside the same page as the carddeck page.
+ 3. Have carddecks appear as <a href> list links on the homepage (index). 
+ 4. Have the carddecks appear as list items (a hrefs) on the user page.
+ 5. Change the Card model to make the number something not decided by the user
+
+
+
+More sources:
+- Migrations https://realpython.com/django-migrations-a-primer/
+- Remote branch commands: https://shravan.dev/blog/update-the-local-list-of-remote-branches-in-the-git-repository/
