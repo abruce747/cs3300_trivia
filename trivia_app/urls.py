@@ -19,6 +19,8 @@ urlpatterns = [
     path('carddecks/<int:pk>',views.CardDeckDetailView.as_view(),name='carddeck-detail'),
 
 
+
+
     path('cards/',views.CardListView.as_view(),name='cards'),
     path('cards/<int:pk>',views.CardDetailView.as_view(),name='card-detail'),
 

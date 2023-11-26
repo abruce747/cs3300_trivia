@@ -7,11 +7,13 @@
             {% if carddeck_list %}
             
                 {% for carddeck in carddeck_list %}
-                    <li class="list-group-item"><strong>Title: {{carddeck.title}}</strong>
-                        <p>Description: {{ carddeck.description }}</p>
-                        <p>Author: {{ carddeck.user.name }}</p>
-                        <a class="btn btn-primary" href="{{ carddeck.get_absolute_url }}" role="button">Play</a>
-                    </li>
+                    {% if carddeck.is_active %}    
+                        <li class="list-group-item"><strong>Title: {{carddeck.title}}</strong>
+                            <p>Description: {{ carddeck.description }}</p>
+                            <p>Author: {{ carddeck.user.name }}</p>
+                            <a class="btn btn-primary" href="{{ carddeck.get_absolute_url }}" role="button">Play</a>
+                        </li>
+                    {% endif %}
                 {% endfor %}
             {%  else  %}
                 <p>Carddeck_list missing in index.html</p>

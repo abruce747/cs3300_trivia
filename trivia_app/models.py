@@ -1,6 +1,7 @@
 from typing import Any
 from django.urls import reverse
 from django.db import models
+from PIL import Image
 
 # Create your models here.
 
@@ -52,6 +53,8 @@ class Card(models.Model):
     option_2 = models.CharField(max_length=200) 
     option_3 = models.CharField(max_length=200)
     option_4 = models.CharField(max_length=200)
+
+    correct_option = models.CharField(max_length=200)
 
     def __str__(self):
         return self.title

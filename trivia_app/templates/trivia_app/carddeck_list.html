@@ -5,15 +5,23 @@
     {% if carddeck_list %}
     <ul>
         {% for carddeck in carddeck_list %}
-        <li>
+        <li class="card_ul_li">
             <!--<a href="{{ carddeck.get_absolute_url }}">{{carddeck.title }}</a>  -->
-            <li class="list-group-item">Title: {{carddeck.title}}
-                <p><strong>Description: {{ carddeck.description }}</p>
-                <a class="btn btn-primary" href="{{ carddeck.get_absolute_url }}" role="button">Play</a>
-                </strong>
-            </li>
-            
-            
+            <li class="list-group-item"><strong>Title: {{carddeck.title}}</strong>
+                <li class="card_ul_li">
+                    <p><strong>Description: </strong>{{ carddeck.description }}</p>
+                    <p>Author: {{carddeck.user.name}}</p>
+                </li>
+                <li class="card_ul_li">
+                    <img src="{{carddeck.image}}">
+                </li>
+                <li class="card_ul_li">
+                    <a class="btn btn-primary" href="{{ carddeck.get_absolute_url }}" role="button">Play</a>
+                </li>
+                <li class="card_ul_li">
+                    <p></p>
+                </li>
+            </li>  
         </li>
         {% endfor %}
     </ul>

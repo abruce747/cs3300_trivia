@@ -34,18 +34,36 @@ def cards(request):
    print("/n/n")
    return render(request, 'trivia_app/card_list.html', {'card_list':associated_cards})
 
+def users(request):
+   user_list = User.objects.all()
+   return render(request, 'trivia_app/user_list.html', {'user_list':user_list})
+
+
+
 class UserListView(generic.ListView):
    model = User
 
 class UserDetailView(generic.DetailView):
    model = User
 
+
+
 class CardDeckDetailView(generic.DetailView):
    model = CardDeck
-   
+   def display(request):
+      all_cards = Card.objects.all()
+      print("/n/nAssociated cards===============/n")
+      print(all_cards)
+      print("/n/n")
+      return render(request, 'trivia_app/card_list.html', {'card_list':all_cards})
+
+
 
 class CardDeckListView(generic.ListView):
    model = CardDeck
+
+
+
 
 class CardDetailView(generic.DetailView):
    model = Card
