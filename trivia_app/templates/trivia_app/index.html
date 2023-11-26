@@ -4,13 +4,18 @@
     {% block content %}
         <h1>All Active Card Decks</h1>
         <ul class="list-group">
-            {% for i in CardDeck %}
-                <li class="list-group-item">Title: {{i.title}}
-                    <p><strong>Description: {{ i.carddeck.description }}</p>
-                    <p><strong>Author: {{ i.carddeck.author }}</p>
-                    <a class="btn btn-primary" href="{{ i.carddeck.get_absolute_url }}" role="button">Play</a>
-                    </strong>
-                </li>
-            {% endfor %}
+            {% if carddeck_list%}
+            
+                {% for i in carddeck_list %}
+                    <li class="list-group-item">Title: {{i.title}}
+                        <p><strong>Description: {{ i.carddeck.description }}</p>
+                        <p><strong>Author: {{ i.carddeck.user.name }}</p>
+                        <a class="btn btn-primary" href="{{ i.carddeck.get_absolute_url }}" role="button">Play</a>
+                        </strong>
+                    </li>
+                {% endfor %}
+            {%  else  %}
+                <p>Carddeck_list missing in index.html</p>
+            {% endif %}  
         </ul>
     {% endblock %}

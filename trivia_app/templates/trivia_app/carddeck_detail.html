@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Card Deck Title: {{ carddeck.title }}</h1>
 
-    <p><strong>Author: </strong> {{ carddeck.author }}</p>
+    <p><strong>Author: </strong> {{ carddeck.user.name }}</p>
     <p><strong>Active: </strong> {{ carddeck.is_active }}</p>
     <p><strong>Description: </strong> {{ carddeck.description }}</p>
     

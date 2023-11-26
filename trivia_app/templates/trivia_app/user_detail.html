@@ -6,8 +6,8 @@
     <p><strong>About: </strong> {{ user.about }}</p>
     <p><strong>Contact email: </strong> {{ user.contact_email }}</p>
     
-    
-    <p><strong>Card Decks:<a href="{{ user.carddeck.get_absolute_url }}">{{ student.portfolio.title }} </a></strong></p>
+    <!--Might need to fix this, replace with something else to get carddecks to properly appear-->
+    <p><strong>Card Decks:<a href="{{ user.carddeck.get_absolute_url }}">{{ carddeck.user.name }} </a></strong></p>
     
 <!--
     {% if user.carddeck_list %}

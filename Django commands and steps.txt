@@ -19,7 +19,7 @@ Useful Commands=================================================================
 
 
 Notes for next steps==========================================================================
- 1. Test app. Get it running.
+ 1. Test app. Get it running again.
 *Update the cards to refer to images. Make the images about Community for now, but give the users 
      their own spaces eventually. Also add answer options as a list of items (4 for now)
 
