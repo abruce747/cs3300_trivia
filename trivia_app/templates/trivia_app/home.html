@@ -1,0 +1,14 @@
+<!-- inherit from base.html-->
+{% extends "trivia_app/base_template.html" %}
+<!-- Replace block content in base_template.html -->
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        Hello, {{ user.username }}!
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+    {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+{% endblock %}

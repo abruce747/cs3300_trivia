@@ -64,7 +64,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,3 +135,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #From https://learndjango.com/tutorials/django-file-and-image-uploads-tutorial
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+#https://learndjango.com/tutorials/django-login-and-logout-tutorial
+# django_project/settings.py
+LOGIN_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "index"

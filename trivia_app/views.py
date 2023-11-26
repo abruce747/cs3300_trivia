@@ -66,11 +66,10 @@ class CardDeckDetailView(generic.DetailView):
       context =super(CardDeckDetailView, self).get_context_data(*args, **kwargs)
       context['card_list'] = Card.objects.all()
       return context
-   
-   all_cards = Card.objects.all()
-   
-   temp_card_list = CardListView()
 
+   """
+   all_cards = Card.objects.all()   
+   temp_card_list = CardListView()
 
    #From https://stackoverflow.com/questions/62727762/django-call-custom-function-within-generic-views
    def post(self, request, *args, **kwargs):
@@ -84,7 +83,7 @@ class CardDeckDetailView(generic.DetailView):
       print(all_cards)
       print("/n/n")
       return render(request, 'trivia_app/card_list.html', {'card_list':all_cards})
-
+   """
 
 
 class CardDeckListView(generic.ListView):

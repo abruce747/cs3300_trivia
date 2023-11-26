@@ -2,7 +2,15 @@
 {% extends "trivia_app/base_template.html" %}
 <!-- Replace block content in base_template.html -->
     {% block content %}
-        <h1>All Active Card Decks</h1>
+    {% if user.is_authenticated %}
+        <h3>Hello, {{ user.username }}! </h3>
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
+    {% else %}
+        <h3>Hi, you are not logged in.</h3>
+        <a href="{% url 'login' %}">Log In</a>
+    {% endif %}    
+    
+    <h1>All Active Card Decks</h1>
         <ul class="list-group">
             {% if carddeck_list %}
             
@@ -10,7 +18,8 @@
                     {% if carddeck.is_active %}    
                         <li class="list-group-item"><strong>Title: {{carddeck.title}}</strong>
                             <p>Description: {{ carddeck.description }}</p>
-                            <p>Author: {{ carddeck.user.name }}</p>
+                            <a href="{{ carddeck.user.get_absolute_url }}">Author: {{carddeck.user.name}}</a>
+                            <!--<p>Author: {{ carddeck.user.name }}</p>-->
                             <a class="btn btn-primary" href="{{ carddeck.get_absolute_url }}" role="button">Play</a>
                         </li>
                     {% endif %}

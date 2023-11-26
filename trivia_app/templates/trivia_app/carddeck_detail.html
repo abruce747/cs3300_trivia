@@ -1,7 +1,7 @@
 {% extends 'trivia_app/base_template.html' %}
 
 {% block content %}
-    <h1>Card Deck Title: {{ carddeck.title }}</h1>
+    <h1>Card Deck: {{ carddeck.title }}</h1>
 
     <p><strong>Author: </strong> {{ carddeck.user.name }}</p>
     <p><strong>Active: </strong> {{ carddeck.is_active }}</p>
@@ -25,7 +25,9 @@
                     <!--Maybe give list of buttons or link one to the next?-->
                 
                     <li class="card_ul_li">
-                        <a class="btn btn-primary"  role="button">A: {{card.option_1}} </a>
+                        <div class="btn btn-primary" role="button" onclick="feedback()" id="popuptester">A: {{card.option_1}} 
+                            
+                        </div>
                     </li>
                     <li class="card_ul_li">
                         <a class="btn btn-primary"  role="button">B: {{card.option_2}} </a>

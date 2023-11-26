@@ -1,0 +1,12 @@
+{% extends 'trivia_app/base_template.html' %}
+
+<!--From https://learndjango.com/tutorials/django-login-and-logout-tutorial-->
+
+{% block content %}
+    <h2>Log In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log In</button>
+    </form>
+{% endblock %}

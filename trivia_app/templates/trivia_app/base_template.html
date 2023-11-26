@@ -13,7 +13,38 @@
                 margin: 5px;
                 list-style-type: none;
             }
+            /* The alert message box */
+            .alert {
+                padding: 20px;
+                background-color: #f44336; /* Red */
+                color: white;
+                margin-bottom: 15px;
+            }
+  
+            /* The close button */
+            .closebtn {
+                margin-left: 15px;
+                color: white;
+                font-weight: bold;
+                float: right;
+                font-size: 22px;
+                line-height: 20px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+  
+            /* When moving the mouse over the close button */
+            .closebtn:hover {
+                color: black;
+            }
         </style>
+        <script>
+            function feedback(){
+                var popup = document.getElementById("popuptester");
+                popup.classList.toggle("alert");
+                
+            }
+        </script>
     </head>
 
     <body>
@@ -28,6 +59,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="{% url 'index' %}">Home</a>
+                        <a class="nav-link" href="{% url 'login' %}">Login / Create Account</a>
                         <a class="nav-link" href="{% url 'carddecks' %}">Card Decks</a>
                         <a class="nav-link" href="{% url 'cards' %}">Cards</a>
                         <a class="nav-link" href="{% url 'users' %}">Users</a>

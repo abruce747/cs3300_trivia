@@ -1,5 +1,7 @@
-from django.urls import path
+from django.urls import path, include
+from django.contrib import admin
 from . import views
+from django.views.generic.base import TemplateView 
 
 
 urlpatterns = [
@@ -9,6 +11,14 @@ urlpatterns = [
     # name='index' parameter is to dynamically create url
     # example in html <a href="{% url 'index' %}">Home</a>.
     path('', views.index, name='index'),
+
+    #From https://learndjango.com/tutorials/django-login-and-logout-tutorial
+    path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')), 
+    path('login/', admin.site.login),
+    path('logout/', admin.site.logout),
+    #path('', TemplateView.as_view(template_name="home.html"), name="home"),
+
 
     #From GE05:
     path('users/', views.UserListView.as_view(), name= 'users'),
