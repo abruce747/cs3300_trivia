@@ -24,10 +24,8 @@ def index(request):
 
 def index(request):
    #Need to fix the is_active issue.
-   #user_active_carddecks = User.objects.select_related('carddeck').all().filter(carddeck__is_active='True')
-   carddecks = User.objects.select_related('carddeck').all()
-   #print("active portfolio query set", user_active_carddecks)
-   return render( request, 'trivia_app/index.html', {'carddecks':carddecks})
+   active_carddecks = CardDeck.objects.all().filter(is_active='True')  
+   return render( request, 'trivia_app/index.html', {'carddeck_list':active_carddecks})
 
 
 class UserListView(generic.ListView):
