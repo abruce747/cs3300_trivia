@@ -31,6 +31,7 @@ class CardDeck(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True) #Removed: , null=True
     description = models.CharField(max_length=500) 
     is_active = models.CharField(max_length=5, default='False')
+    image = models.ImageField(upload_to='images/')
 
     def __str__(self):
         return self.title

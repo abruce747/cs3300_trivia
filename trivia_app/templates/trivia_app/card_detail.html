@@ -4,6 +4,9 @@
     <h1>Card Name: {{ card.title }}</h1>
 
     <p><strong>Belongs to carddeck: </strong> {{ card.carddeck.title }} by {{ card.carddeck.user.name }}</p>
+    
+    <img src="{{card.carddeck.image}}">
+    
     <h2><strong>Question: </strong> {{ card.question }}</h2>
     <ul> 
         <!--Need to define where the button goes to when clicked-->
