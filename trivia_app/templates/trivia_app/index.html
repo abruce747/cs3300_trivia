@@ -6,12 +6,11 @@
         <ul class="list-group">
             {% if carddeck_list %}
             
-                {% for i in carddeck_list %}
-                    <li class="list-group-item">Title: {{i.title}}
-                        <p><strong>Description: {{ i.carddeck.description }}</p>
-                        <p><strong>Author: {{ i.carddeck.user.name }}</p>
-                        <a class="btn btn-primary" href="{{ i.carddeck.get_absolute_url }}" role="button">Play</a>
-                        </strong>
+                {% for carddeck in carddeck_list %}
+                    <li class="list-group-item"><strong>Title: {{carddeck.title}}</strong>
+                        <p>Description: {{ carddeck.description }}</p>
+                        <p>Author: {{ carddeck.user.name }}</p>
+                        <a class="btn btn-primary" href="{{ carddeck.get_absolute_url }}" role="button">Play</a>
                     </li>
                 {% endfor %}
             {%  else  %}
