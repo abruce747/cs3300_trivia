@@ -27,6 +27,12 @@ def index(request):
    active_carddecks = CardDeck.objects.all().filter(is_active='True')  
    return render( request, 'trivia_app/index.html', {'carddeck_list':active_carddecks})
 
+def cards(request):
+   associated_cards = Card.objects.all()
+   print("/n/nAssociated cards===============/n")
+   print(associated_cards)
+   print("/n/n")
+   return render(request, 'trivia_app/card_list.html', {'card_list':associated_cards})
 
 class UserListView(generic.ListView):
    model = User
@@ -36,6 +42,7 @@ class UserDetailView(generic.DetailView):
 
 class CardDeckDetailView(generic.DetailView):
    model = CardDeck
+   
 
 class CardDeckListView(generic.ListView):
    model = CardDeck
