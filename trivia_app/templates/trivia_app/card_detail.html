@@ -5,5 +5,22 @@
 
     <p><strong>Belongs to carddeck: </strong> {{ card.carddeck.title }} by {{ card.carddeck.user.name }}</p>
     <h2><strong>Question: </strong> {{ card.question }}</h2>
+    <ul> 
+        <!--Need to define where the button goes to when clicked-->
+        
+        <li class="card_ul_li">
+            <a class="btn btn-primary" href="{{ card.get_absolute_url }}" role="button">A: {{card.option_1}} </a>
+        </li>
+        <li class="card_ul_li">
+            <a class="btn btn-primary" href="{{ card.get_absolute_url }}" role="button">B: {{card.option_2}} </a>
+        </li>
+        <li class="card_ul_li">
+            <a class="btn btn-primary" href="{{ card.get_absolute_url }}" role="button">C: {{card.option_3}} </a>
+        </li>
+        <li class="card_ul_li">
+            <a class="btn btn-primary" href="{{ card.get_absolute_url }}" role="button">D: {{card.option_4}} </a>
+        </li>
+        
+    </ul>
 
 {% endblock %}

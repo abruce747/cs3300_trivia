@@ -46,6 +46,11 @@ class Card(models.Model):
     question = models.CharField(max_length=1000)
     #Each card must have an assigned carddeck
     carddeck = models.ForeignKey(CardDeck, on_delete=models.CASCADE, null=True)
+    
+    option_1 = models.CharField(max_length=200)
+    option_2 = models.CharField(max_length=200) 
+    option_3 = models.CharField(max_length=200)
+    option_4 = models.CharField(max_length=200)
 
     def __str__(self):
         return self.title
