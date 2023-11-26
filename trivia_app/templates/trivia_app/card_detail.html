@@ -1,27 +1,25 @@
 {% extends 'trivia_app/base_template.html' %}
 
 {% block content %}
-    <h1>Card Name: {{ card.title }}</h1>
-
-    <p><strong>Belongs to carddeck: </strong> {{ card.carddeck.title }} by {{ card.carddeck.user.name }}</p>
-    
+    <h3>{{ card.title }}</h3>
+  
     <img src="{{card.carddeck.image}}">
     
-    <h2><strong>Question: </strong> {{ card.question }}</h2>
+    <h3><strong>Question: </strong> {{ card.question }}</h3>
     <ul> 
         <!--Maybe give list of buttons or link one to the next?-->
         
         <li class="card_ul_li">
-            <a class="btn btn-primary" href="{{ card.get_absolute_url }}" role="button">A: {{card.option_1}} </a>
+            <a class="btn btn-primary" role="button">A: {{card.option_1}} </a>
         </li>
         <li class="card_ul_li">
-            <a class="btn btn-primary" href="{{ card.get_absolute_url }}" role="button">B: {{card.option_2}} </a>
+            <a class="btn btn-primary" role="button">B: {{card.option_2}} </a>
         </li>
         <li class="card_ul_li">
-            <a class="btn btn-primary" href="{{ card.get_absolute_url }}" role="button">C: {{card.option_3}} </a>
+            <a class="btn btn-primary"  role="button">C: {{card.option_3}} </a>
         </li>
         <li class="card_ul_li">
-            <a class="btn btn-primary" href="{{ card.get_absolute_url }}" role="button">D: {{card.option_4}} </a>
+            <a class="btn btn-primary"  role="button">D: {{card.option_4}} </a>
         </li>
         
     </ul>

@@ -13,10 +13,32 @@
     <h2>Cards:</h2>
     {% if card_list %}
     <ul>
-        {% for card in card_list %}
-        <li>
-            <a href="{{ card.get_absolute_url }}">{{ card.title }}</a>
-        </li>
+        {% for card in card_list%}
+            {% if card.carddeck == carddeck %}    
+        
+                <h3>{{ card.title }}</h3>
+
+                <img src="{{card.carddeck.image}}">
+            
+                <h4><strong>Question: </strong> {{ card.question }}</h4>
+                <ul> 
+                    <!--Maybe give list of buttons or link one to the next?-->
+                
+                    <li class="card_ul_li">
+                        <a class="btn btn-primary"  role="button">A: {{card.option_1}} </a>
+                    </li>
+                    <li class="card_ul_li">
+                        <a class="btn btn-primary"  role="button">B: {{card.option_2}} </a>
+                    </li>
+                    <li class="card_ul_li">
+                        <a class="btn btn-primary" role="button">C: {{card.option_3}} </a>
+                    </li>
+                    <li class="card_ul_li">
+                        <a class="btn btn-primary"  role="button">D: {{card.option_4}} </a>
+                    </li>
+                    <li class="card_ul_li"><h3> </h3></li>
+                </ul>
+            {% endif %}
         {% endfor %}
     </ul>
     {% else %}

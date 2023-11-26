@@ -1,3 +1,4 @@
+from typing import Any
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -23,16 +24,15 @@ def index(request):
 """
 
 def index(request):
-   #Need to fix the is_active issue.
    active_carddecks = CardDeck.objects.all().filter(is_active='True')  
    return render( request, 'trivia_app/index.html', {'carddeck_list':active_carddecks})
 
 def cards(request):
-   associated_cards = Card.objects.all()
-   print("/n/nAssociated cards===============/n")
-   print(associated_cards)
+   all_cards = Card.objects.all()
+   print("/n/nAll cards===============/n")
+   print(all_cards)
    print("/n/n")
-   return render(request, 'trivia_app/card_list.html', {'card_list':associated_cards})
+   return render(request, 'trivia_app/card_list.html', {'card_list':all_cards})
 
 def users(request):
    user_list = User.objects.all()
@@ -48,8 +48,36 @@ class UserDetailView(generic.DetailView):
 
 
 
+
+class CardDetailView(generic.DetailView):
+   model = Card
+
+class CardListView(generic.ListView):
+   model = Card
+
+
+
 class CardDeckDetailView(generic.DetailView):
    model = CardDeck
+  # template_name = 'trivia_app/carddeck_detail.html'
+   
+   #From https://stackoverflow.com/questions/41287431/django-combine-detailview-and-listview
+   def get_context_data(self, *args, **kwargs):
+      context =super(CardDeckDetailView, self).get_context_data(*args, **kwargs)
+      context['card_list'] = Card.objects.all()
+      return context
+   
+   all_cards = Card.objects.all()
+   
+   temp_card_list = CardListView()
+
+
+   #From https://stackoverflow.com/questions/62727762/django-call-custom-function-within-generic-views
+   def post(self, request, *args, **kwargs):
+      self.object = self.get_object()
+      self.display(request)
+      return super().post(request, *args, **kwargs)
+
    def display(request):
       all_cards = Card.objects.all()
       print("/n/nAssociated cards===============/n")
@@ -63,10 +91,3 @@ class CardDeckListView(generic.ListView):
    model = CardDeck
 
 
-
-
-class CardDetailView(generic.DetailView):
-   model = Card
-
-class CardListView(generic.ListView):
-   model = Card
