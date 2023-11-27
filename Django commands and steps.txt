@@ -38,6 +38,7 @@ More sources:
 - Image upload example: https://learndjango.com/tutorials/django-file-and-image-uploads-tutorial
 - Testing: https://docs.djangoproject.com/en/4.2/topics/testing/overview/
 - More testing: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing
--
+- Selenium setup: https://reflect.run/articles/installing-chromedriver-and-python-selenium/#installing-and-configuring-selenium
+- 
 -
 

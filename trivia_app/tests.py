@@ -1,6 +1,13 @@
 from django.test import TestCase
 from trivia_app.models import Card, CardDeck, User
 
+from webdriver_manager.chrome import ChromeDriverManager 
+from selenium import webdriver 
+from selenium.webdriver.chrome.service import Service as ChromeService
+
+browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) browser.implicitly_wait(5)
+
+
 class UserTestCase(TestCase):
     def setUp(self):
         test_user_1 = User(
