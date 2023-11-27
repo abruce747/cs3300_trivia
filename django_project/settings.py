@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #my apps
     'trivia_app',
     'bootstrap5',
+    'accounts',
 ]
 
 # Add support for authenticating users

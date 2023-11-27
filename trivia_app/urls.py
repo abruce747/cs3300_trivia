@@ -2,6 +2,7 @@ from django.urls import path, include
 from django.contrib import admin
 from . import views
 from django.views.generic.base import TemplateView 
+from .views import SignUpView
 
 
 urlpatterns = [
@@ -14,11 +15,12 @@ urlpatterns = [
 
     #From https://learndjango.com/tutorials/django-login-and-logout-tutorial
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls')), 
+    path("accounts/", include("accounts.urls")),  # new
+    #path('accounts/', include('django.contrib.auth.urls')), 
     path('login/', admin.site.login),
     path('logout/', admin.site.logout),
     #path('', TemplateView.as_view(template_name="home.html"), name="home"),
-
+    path("signup/", SignUpView.as_view(), name="signup"),
 
     #From GE05:
     path('users/', views.UserListView.as_view(), name= 'users'),
