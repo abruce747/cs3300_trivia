@@ -56,7 +56,7 @@ class Card(models.Model):
     option_3 = models.CharField(max_length=200)
     option_4 = models.CharField(max_length=200)
 
-    correct_option = models.CharField(max_length=200)
+    correct_option = models.CharField(max_length=200, default="filler text")
 
     def __str__(self):
         return self.title
