@@ -22,6 +22,8 @@ from django.shortcuts import (get_object_or_404,
                               render,
                               HttpResponseRedirect)
 
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 
 # Create your views here.
@@ -127,7 +129,7 @@ class UpdateCardView(generic.UpdateView):
    template_name = "trivia_app/update_card_view.html"
 '''
   
-class CardCreate(CreateView):
+class CardCreate(LoginRequiredMixin, CreateView):
     model = Card
     fields = [
       'title',
@@ -162,7 +164,7 @@ class UserCreate(CreateView):
     success_url = reverse_lazy('users')
 
 
-class CardUpdate(UpdateView):
+class CardUpdate(LoginRequiredMixin,UpdateView):
    model = Card
    fields = [
       'title',

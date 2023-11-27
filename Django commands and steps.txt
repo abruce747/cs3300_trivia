@@ -17,7 +17,6 @@ Useful Commands=================================================================
                                              python3 -m pip install django-bootstrap-v5
 
 
-
 Notes for next steps==========================================================================
  1. Update the cards to refer to images. Make the images about Community for now, but give the users 
      their own spaces eventually. Also add answer options as a list of items (4 for now)
@@ -34,3 +33,11 @@ More sources:
 - Remote branch commands: https://shravan.dev/blog/update-the-local-list-of-remote-branches-in-the-git-repository/
 - Fixing blank images issue: https://stackoverflow.com/questions/20848640/django-not-displaying-image
 - Displaying a list view within a detail view: https://stackoverflow.com/questions/41287431/django-combine-detailview-and-listview
+- Implementing CRUD: https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/#top
+- List and Detail Views https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views
+- Log in and permissions: https://learndjango.com/tutorials/django-best-practices-user-permissions
+- Forms: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
+- Images: https://docs.djangoproject.com/en/4.2/ref/forms/fields/#imagefield
+- More forms: https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/#top
+- Image upload example: https://learndjango.com/tutorials/django-file-and-image-uploads-tutorial
+
