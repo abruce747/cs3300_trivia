@@ -19,6 +19,9 @@ from django.urls import path, include
 from trivia_app.views import SignUpView
 from django.views.generic.base import TemplateView
 
+#From https://learndjango.com/tutorials/django-file-and-image-uploads-tutorial
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,8 +31,11 @@ urlpatterns = [
     #path("accounts/", include("django.contrib.auth.urls")),
 
     #From: https://medium.com/@20ce125/django-crud-create-retrieve-update-delete-operations-441a8a296119
-    path('cards/', include('trivia_app.urls')),
-    path('carddecks/', include('trivia_app.urls')),
-    path('users/', include('trivia_app.urls')),
+    #path('cards/', include('trivia_app.urls')),
+    #path('carddecks/', include('trivia_app.urls')),
+    #path('users/', include('trivia_app.urls')),
 
 ]
+
+if settings.DEBUG:  # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
