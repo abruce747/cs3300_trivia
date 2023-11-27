@@ -94,7 +94,13 @@ class CardDeckListView(generic.ListView):
    model = CardDeck
 
 
+#With help of https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/#top
 class SignUpView(generic.CreateView):
     form_class = UserCreationForm
-    success_url = reverse_lazy("login")
+    success_url = reverse_lazy("create-profile")
     template_name = "registration/signup.html"
+
+class CreateProfileView(generic.CreateView):
+   form_class = UserForm
+   success_url = reverse_lazy("login")
+   template_name = "registration/create-profile.html"

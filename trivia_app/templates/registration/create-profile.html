@@ -1,13 +1,13 @@
 {% extends 'trivia_app/base_template.html' %}
 
-{% block title %}Sign Up{% endblock %}
+{% block title %}Create User Profile{% endblock %}
 
 {% block content %}
-    <h2>Sign up</h2>
+    <h2>Create Profile</h2>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
 
-        <button type="submit">Sign Up</button>
+        <button type="submit">Complete</button>
     </form>
 {% endblock %}

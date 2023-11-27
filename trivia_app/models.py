@@ -2,6 +2,8 @@ from typing import Any
 from django.urls import reverse
 from django.db import models
 from PIL import Image
+from django.forms import ModelForm
+
 
 # Create your models here.
 
@@ -64,3 +66,17 @@ class Card(models.Model):
         # return reverse("model_detail", kwargs={"pk": self.pk})
         return reverse('card-detail', args=[str(self.id)])    
 #end Card class
+
+
+#From https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/#top
+class UserForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ['name', 'about', 'contact_email']
+
+# Creating a form to add an User.
+user_form = UserForm()
+
+# Creating a form to change an existing User.
+user = User.objects.get(pk=1)
+form = UserForm(instance=user)
