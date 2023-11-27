@@ -3,20 +3,20 @@
 {% block content %}
     <h1>Card List</h1>
     {% if card_list %}
-    {% for card in card_list %}
-        <a href="{{ card.get_absolute_url }}">{{card.title }}</a>
         <ul>
-            <li>
-                <td><a href="{% url "card-detail" card.id %}">View</a></td>
-            </li>
-            <li>
-                <td><a href="{% url "edit_card" card.id %}">Edit</a></td>
-            </li>
-            <li>
-                <td><a href="{% url "delete_card" card.id %}">Delete</a></td>
-            </li>
-        </ul>  
-    {% endfor %}
+            {% for card in card_list %}
+                <li class="card_ul_li">
+                    <a href="{{ card.get_absolute_url }}">{{card.title }}</a>
+                    {% if user.is_authenticated %}
+                        <td><a href="{% url "edit_card" card.id %}">Edit</a></td>
+                        <td><a href="{% url "delete_card" card.id %}">Delete</a></td>                        
+                    {% else %}     
+                        <p>Log in to make changes.</hp>
+                        <a href="{% url 'login' %}">Log In</a>
+                    {% endif %}
+                </li> 
+            {% endfor %}
+        </ul>
     {% else %}
     <p>There are no cards created.</p>
     {% endif %}

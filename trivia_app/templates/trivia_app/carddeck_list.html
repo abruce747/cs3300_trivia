@@ -12,8 +12,15 @@
                 <li class="card_ul_li">
                     <p><strong>Description: </strong>{{ carddeck.description }}</p>
                     <td><a href="{% url "carddeck-detail" carddeck.id %}">View</a></td>
-                    <td><a href="{% url "edit_carddeck" carddeck.id %}">Edit</a></td>
-                    <td><a href="{% url "delete_carddeck" carddeck.id %}">Delete</a></td>
+                    
+                    {% if user.is_authenticated %}
+                        <td><a href="{% url "edit_carddeck" carddeck.id %}">Edit</a></td>
+                        <td><a href="{% url "delete_carddeck" carddeck.id %}">Delete</a></td>                        
+                    {% else %}
+                        <p>Log in to make changes.</hp>
+                        <a href="{% url 'login' %}">Log In</a>
+                    {% endif %} 
+
                 </li>
                 <li class="card_ul_li">
                     <img src="{{carddeck.image}}">
