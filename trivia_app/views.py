@@ -37,7 +37,7 @@ def index(request):
 """
 
 def index(request):
-   active_carddecks = CardDeck.objects.all().filter(is_active='True')  
+   active_carddecks = CardDeck.objects.all().filter(is_active='True') 
    return render( request, 'trivia_app/index.html', {'carddeck_list':active_carddecks})
 
 '''

@@ -16,11 +16,17 @@
             
                 {% for carddeck in carddeck_list %}
                     {% if carddeck.is_active %}    
-                        <li class="list-group-item"><strong>Title: {{carddeck.title}}</strong>
-                            <p>Description: {{ carddeck.description }}</p>
-                            <a href="{{ carddeck.user.get_absolute_url }}">Author: {{carddeck.user.name}}</a>
-                            <!--<p>Author: {{ carddeck.user.name }}</p>-->
-                            <a class="btn btn-primary" href="{{ carddeck.get_absolute_url }}" role="button">Play</a>
+                        <li class="list-group">
+                            <li class="card_ul_li">
+                                <img src="{{ carddeck.image.url }}" alt="{{ card.carddeck.title }}">
+                            </li>  
+                            <li class="card_ul_li"> 
+                                <a class="btn btn-primary" href="{{ carddeck.get_absolute_url }}" role="button">Play {{carddeck.title}} trivia!</a>
+                            </li>
+                            <li class="card_ul_li">              
+                                <p>Description: {{ carddeck.description }}</p>
+                            </li>
+                            
                         </li>
                     {% endif %}
                 {% endfor %}
