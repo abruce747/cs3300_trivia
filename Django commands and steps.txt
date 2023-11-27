@@ -15,16 +15,12 @@ Useful Commands=================================================================
 - Updating local branches to match remote:   Be careful here: git remote update origin
 - Downloading django-bootstrap:              Open the trivia_djvenv folder, activate the venv, and run:
                                              python3 -m pip install django-bootstrap-v5
+- Running unit tests: ./manage.py test
+
 
 
 Notes for next steps==========================================================================
- 1. Update the cards to refer to images. Make the images about Community for now, but give the users 
-     their own spaces eventually. Also add answer options as a list of items (4 for now)
-
- 2. Update views and urls and templates to put the cards inside the same page as the carddeck page.
- 3. Have carddecks appear as <a href> list links on the homepage (index). 
- 4. Have the carddecks appear as list items (a hrefs) on the user page.
- 5. Change the Card model to make the number something not decided by the user
+- Fix images issue
 
 
 
@@ -40,4 +36,8 @@ More sources:
 - Images: https://docs.djangoproject.com/en/4.2/ref/forms/fields/#imagefield
 - More forms: https://docs.djangoproject.com/en/4.2/topics/forms/modelforms/#top
 - Image upload example: https://learndjango.com/tutorials/django-file-and-image-uploads-tutorial
+- Testing: https://docs.djangoproject.com/en/4.2/topics/testing/overview/
+- More testing: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Testing
+-
+-
 
