@@ -140,5 +140,5 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 #https://learndjango.com/tutorials/django-login-and-logout-tutorial
 # django_project/settings.py
-LOGIN_REDIRECT_URL = "index"
-LOGOUT_REDIRECT_URL = "index"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

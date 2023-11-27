@@ -38,17 +38,19 @@ def index(request):
    active_carddecks = CardDeck.objects.all().filter(is_active='True')  
    return render( request, 'trivia_app/index.html', {'carddeck_list':active_carddecks})
 
+'''
 def cards(request):
    all_cards = Card.objects.all()
    print("/n/nAll cards===============/n")
    print(all_cards)
    print("/n/n")
    return render(request, 'trivia_app/card_list.html', {'card_list':all_cards})
-
+'''
+'''
 def users(request):
    user_list = User.objects.all()
    return render(request, 'trivia_app/user_list.html', {'user_list':user_list})
-
+'''
 
 
 class UserListView(generic.ListView):
@@ -137,7 +139,7 @@ class CardCreate(CreateView):
       'option_4',
       'correct_option',
       ]
-    success_url = reverse_lazy('card_list')
+    success_url = reverse_lazy('cards')
 
 class CardDeckCreate(CreateView):
     model = CardDeck
@@ -148,7 +150,7 @@ class CardDeckCreate(CreateView):
       'is_active',
       'image',
       ]
-    success_url = reverse_lazy('carddeck_list')
+    success_url = reverse_lazy('carddecks')
 
 class UserCreate(CreateView):
     model = User
@@ -157,7 +159,7 @@ class UserCreate(CreateView):
       'about',
       'contact_email',
       ]
-    success_url = reverse_lazy('user_list')
+    success_url = reverse_lazy('users')
 
 
 class CardUpdate(UpdateView):
@@ -172,7 +174,7 @@ class CardUpdate(UpdateView):
       'option_4',
       'correct_option',
    ]
-   success_url = reverse_lazy('card_list')
+   success_url = reverse_lazy('cards')
 
 class CardDeckUpdate(UpdateView):
     model = CardDeck
@@ -183,7 +185,7 @@ class CardDeckUpdate(UpdateView):
       'is_active',
       'image',
       ]
-    success_url = reverse_lazy('carddeck_list')
+    success_url = reverse_lazy('carddecks')
 
 class UserUpdate(UpdateView):
     model = User
@@ -192,20 +194,20 @@ class UserUpdate(UpdateView):
       'about',
       'contact_email',
       ]
-    success_url = reverse_lazy('user_list')
+    success_url = reverse_lazy('users')
 
 
 class CardDelete(DeleteView):
     model = Card
-    success_url = reverse_lazy('card_list')
+    success_url = reverse_lazy('cards')
 
 class CardDeckDelete(DeleteView):
     model = CardDeck
-    success_url = reverse_lazy('carddeck_list')
+    success_url = reverse_lazy('carddecks')
 
 class UserDelete(DeleteView):
     model = User
-    success_url = reverse_lazy('user_list')
+    success_url = reverse_lazy('users')
 
 
 
