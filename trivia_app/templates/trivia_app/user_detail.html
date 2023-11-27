@@ -5,23 +5,27 @@
 
     <p><strong>About: </strong> {{ user.about }}</p>
     <p><strong>Contact email: </strong> {{ user.contact_email }}</p>
-    
-    <!--Might need to fix this, replace with something else to get carddecks to properly appear-->
-    <p><strong>Card Decks:<a href="{{ user.carddeck.get_absolute_url }}">{{ carddeck.user.name }} </a></strong></p>
-    
-<!--
-    {% if user.carddeck_list %}
+<!--Copy if user is auth code from index file if the user conflict is fixed-->
+        <td><a href="{% url "edit_user" user.id %}">Edit</a></td>
+        <td><a href="{% url "delete_user" user.id %}">Delete</a></td>
+   
+
+    <p><strong>User's Card Decks:<a href="{{ user.carddeck.get_absolute_url }}">{{ carddeck.user.name }} </a></strong></p>
+
+    {% if carddeck_list %}
     <ul>
         {% for carddeck in carddeck_list %}
-        <li>
-            <a href="{{ carddeck.get_absolute_url }}">{{carddeck.title }}</a>
-        </li>
+            {% if carddeck.user == user %}
+            <li>
+                <a href="{{ carddeck.get_absolute_url }}">{{carddeck.title }}</a>
+            </li>
+            {% endif %}
         {% endfor %}
     </ul>
     {% else %}
-    <p>User has no card decks.</p>
+        <p>User has no card decks.</p>
     {% endif %}
--->
+
 
 
 {% endblock %}

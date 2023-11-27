@@ -26,4 +26,10 @@ urlpatterns = [
     path('signup/', SignUpView.as_view(), name='signup'),
     path('accounts/', include('trivia_app.urls')), 
     #path("accounts/", include("django.contrib.auth.urls")),
+
+    #From: https://medium.com/@20ce125/django-crud-create-retrieve-update-delete-operations-441a8a296119
+    path('cards/', include('trivia_app.urls')),
+    path('carddecks/', include('trivia_app.urls')),
+    path('users/', include('trivia_app.urls')),
+
 ]

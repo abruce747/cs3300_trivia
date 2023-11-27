@@ -5,12 +5,15 @@
     {% if carddeck_list %}
     <ul>
         {% for carddeck in carddeck_list %}
+        
         <li class="card_ul_li">
             <!--<a href="{{ carddeck.get_absolute_url }}">{{carddeck.title }}</a>  -->
             <li class="list-group-item"><strong>Title: {{carddeck.title}}</strong>
                 <li class="card_ul_li">
                     <p><strong>Description: </strong>{{ carddeck.description }}</p>
-                    <p>Author: {{carddeck.user.name}}</p>
+                    <td><a href="{% url "carddeck-detail" carddeck.id %}">View</a></td>
+                    <td><a href="{% url "edit_carddeck" carddeck.id %}">Edit</a></td>
+                    <td><a href="{% url "delete_carddeck" carddeck.id %}">Delete</a></td>
                 </li>
                 <li class="card_ul_li">
                     <img src="{{carddeck.image}}">
