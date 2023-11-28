@@ -21,6 +21,7 @@ Useful Commands=================================================================
 
 Notes for next steps==========================================================================
 - Fix images issue
+- Fix button selection issue
 
 
 
@@ -42,6 +43,9 @@ More sources:
 - Selenium setup: https://reflect.run/articles/installing-chromedriver-and-python-selenium/#installing-and-configuring-selenium
 - More selenium setup (very general): https://www.browserstack.com/guide/run-selenium-tests-using-selenium-chromedriver#:~:text=Download%20and%20install%20the%20latest,of%20ChromeDriver%20in%20your%20code.
 - Chromedriver testing: https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
-- Pillow https://pillow.readthedocs.io/en/stable/installation.html
+- Selenium window closing fix: https://stackoverflow.com/questions/47508518/google-chrome-closes-immediately-after-being-launched-with-selenium
+- Less helpful Selenium setup: https://www.browserstack.com/guide/python-selenium-to-run-web-automation-test
+
+Pillow https://pillow.readthedocs.io/en/stable/installation.html
 - 
 

@@ -58,11 +58,11 @@ def users(request):
 class UserListView(generic.ListView):
    model = User
 
+
+#Help from https://stackoverflow.com/questions/41287431/django-combine-detailview-and-listview
+
 class UserDetailView(generic.DetailView):
    model = User
-  # template_name = 'trivia_app/carddeck_detail.html'
-   
-   #From https://stackoverflow.com/questions/41287431/django-combine-detailview-and-listview
    def get_context_data(self, *args, **kwargs):
       context =super(UserDetailView, self).get_context_data(*args, **kwargs)
       context['carddeck_list'] = CardDeck.objects.all()

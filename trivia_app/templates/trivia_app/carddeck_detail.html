@@ -15,15 +15,10 @@
     <ul>
         {% for card in card_list%}
             {% if card.carddeck == carddeck %}    
-        
                 <h3>{{ card.title }}</h3>
-
                 <img src="{{card.carddeck.image.url}}" alt="{{ card.carddeck.title }}">
-            
                 <h4><strong>Question: </strong> {{ card.question }}</h4>
                 <ul> 
-                    <!--Maybe give list of buttons or link one to the next?-->
-                
                     <li class="card_ul_li">
                         <div class="btn btn-primary" role="button" onclick="feedback({{ card.correct_option }}, {{ card.option_1 }})" id="popuptester_1">A: {{card.option_1}} 
                         </div>

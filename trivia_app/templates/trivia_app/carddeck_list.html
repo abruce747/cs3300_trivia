@@ -5,9 +5,7 @@
     {% if carddeck_list %}
     <ul>
         {% for carddeck in carddeck_list %}
-        
         <li class="card_ul_li">
-            <!--<a href="{{ carddeck.get_absolute_url }}">{{carddeck.title }}</a>  -->
             <li class="list-group-item"><strong>Title: {{carddeck.title}}</strong>
                 <li class="card_ul_li">
                     <img src="{{ carddeck.image.url }}" alt="{{ card.carddeck.title }}">

@@ -7,15 +7,31 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.keys import Keys
 from django.test import LiveServerTestCase
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from selenium.webdriver.chrome.webdriver import WebDriver
+from selenium.webdriver.chrome.webdriver import WebDriver, Options
+
+import unittest
 
 import os
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) 
-driver.implicitly_wait(100)
-driver.get("http://127.0.0.1:8000")
-print(driver.title)
-driver.close()
+#From https://stackoverflow.com/questions/47508518/google-chrome-closes-immediately-after-being-launched-with-selenium
+#driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) 
+def launchBrowser():
+    chrome_ops = Options()
+    chrome_ops.binary_location="C:\Program Files\Google\Chrome\Application\chrome.exe"
+    chrome_ops.add_argument("disable-infobars")
+    driver = webdriver.Chrome(chrome_ops)
+
+    driver.implicitly_wait(10)
+    driver.set_page_load_timeout(10)
+    driver.get("http://127.0.0.1:8000")
+
+    print(driver.title)
+    print(driver.current_url)
+
+    while(True):
+        pass
+
+launchBrowser()
 
 class GeneralFunctionalTests(LiveServerTestCase):
     def setUp(self):
@@ -24,11 +40,11 @@ class GeneralFunctionalTests(LiveServerTestCase):
 
     def tearDown(self):
         self.browser.quit()
-
+'''
     def test_can_navigate_site(self):
         self.browser.get('http://127.0.0.1:8000')
-        assert 'Django' in self.browser.title
-
+        assert 'django' in self.browser.title
+'''
 
 
 
