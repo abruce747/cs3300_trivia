@@ -25,18 +25,20 @@
                     <!--Maybe give list of buttons or link one to the next?-->
                 
                     <li class="card_ul_li">
-                        <div class="btn btn-primary" role="button" onclick="feedback()" id="popuptester">A: {{card.option_1}} 
-                            
+                        <div class="btn btn-primary" role="button" onclick="feedback({{ card.correct_option }}, {{ card.option_1 }})" id="popuptester_1">A: {{card.option_1}} 
                         </div>
                     </li>
                     <li class="card_ul_li">
-                        <a class="btn btn-primary"  role="button">B: {{card.option_2}} </a>
+                        <div class="btn btn-primary" role="button" onclick="feedback({{card.correct_option}}, {{card.option_2}})" id="popuptester_2">B: {{card.option_2}} 
+                        </div>
                     </li>
                     <li class="card_ul_li">
-                        <a class="btn btn-primary" role="button">C: {{card.option_3}} </a>
+                        <div class="btn btn-primary" role="button" onclick="feedback({{card.correct_option}}, {{card.option_3}})" id="popuptester_3">C: {{card.option_3}} 
+                        </div>
                     </li>
                     <li class="card_ul_li">
-                        <a class="btn btn-primary"  role="button">D: {{card.option_4}} </a>
+                        <div class="btn btn-primary" role="button" onclick="feedback({{card.correct_option}}, {{card.option_4}})" id="popuptester_4">D: {{card.option_4}} 
+                        </div>
                     </li>
                     <li class="card_ul_li"><h3> </h3></li>
                 </ul>

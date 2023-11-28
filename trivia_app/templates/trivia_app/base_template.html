@@ -13,35 +13,13 @@
                 margin: 5px;
                 list-style-type: none;
             }
-            /* The alert message box */
-            .alert {
-                padding: 20px;
-                background-color: #f44336; /* Red */
-                color: white;
-                margin-bottom: 15px;
-            }
-  
-            /* The close button */
-            .closebtn {
-                margin-left: 15px;
-                color: white;
-                font-weight: bold;
-                float: right;
-                font-size: 22px;
-                line-height: 20px;
-                cursor: pointer;
-                transition: 0.3s;
-            }
-  
-            /* When moving the mouse over the close button */
-            .closebtn:hover {
-                color: black;
-            }
+            
         </style>
         <script>
-            function feedback(){
-                var popup = document.getElementById("popuptester");
-                popup.classList.toggle("alert");
+            function feedback(correct_answer, given_answer){
+                if (correct_answer === given_answer){
+                    alert("Correct! Good job!");
+                }
                 
             }
         </script>
